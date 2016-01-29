@@ -1,0 +1,19 @@
+
+<script>
+function loadImage() {
+  var preload = new createjs.LoadQueue();
+  preload.addEventListener("fileload", handleFileComplete);
+  preload.loadFile("assets/preloadjs-bg-center.png");
+}
+
+function handleFileComplete(event) {
+  document.body.appendChild(event.result);
+}
+</script>
+
+
+This is the riddles
+<%= @riddles %>
+
+
+<button onclick="loadMusic();" class="load-image">Load Music</button>
