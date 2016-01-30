@@ -188,7 +188,8 @@
 		var endPic;
 		if (speechCapture.toLowerCase() == riddleAnswer.toLowerCase()) {
 			msgText = "You win!";
-			endPic = "";
+			endPic = "/art/png/victorypage.png";
+			fadeMain();
 		} else {
 			msgText = "You lose!";
 			endPic = "";
@@ -198,6 +199,7 @@
 		$('#message').text(msgText);
 		$('#endPic').html('<img src="' + endPic + '">');
 		$('#fridgeScreen').fadeOut();
+		
 		$('#endScreen').fadeIn();
 		
 	}
