@@ -14,6 +14,7 @@
 			<% unless audio[1]["filename"].blank? %>
 				{ id: "<%= audio[0].to_s %>", src: "<%= audio[1]["filename"].to_s %>" },
 			<% end %>
+				{ id: "kitty_milk_ditty", src: "kitty_milk_ditty.mp3" }
 		<% end %>
 	<% end %>
 	
@@ -49,6 +50,7 @@
 	
 	function enableStart() {
 		$("#startBtn").fadeIn();
+		createjs.Sound.play("kitty_milk_ditty");
 		$("#loadBar").fadeOut();
 		arr.sort(function () {
                         return Math.random() - 0.5;
@@ -202,6 +204,10 @@
 	}
 	
 </script>
+
+<audio controls autoplay hidden>
+  <source src="/audio/kitty_milk_ditty.mp3" type="audio/mpeg">
+</audio>
 
 <div id="container">
 	<div id="start_screen">   
