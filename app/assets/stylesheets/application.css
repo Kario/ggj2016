@@ -11,3 +11,24 @@
  *= require_self
  *= require_tree .
  */
+ 
+ 
+ #start_screen { width: 100%; height: 100%; background: url('/art/png/background_titlepage.png'); }
+ #container { background: url('/art/png/background.png') }
+ 
+#startBtn { background: url('/art/png/play_btn.png'); width: 257px !important; height: 110px !important; border: 0px; display: none; position:  absolute; top: 82%; left: 23%; }
+
+.riddle_btn { font-size: 78px; width: 400px !important; height: 200px; }
+
+#toaster_btn { height: 200px; width:230px; background: url('/art/png/toaster.png'); border: 0px; position: absolute; top: 85%; left: 22%; }
+#roomba_btn { height: 200px; width: 365px; background: url('/art/png/roombot.png'); border: 0px; position: absolute; top: 85%; left: 1%;}
+#kittybrush_btn { height: 200px; width: 97px; background: url('/art/png/cat_brush.png'); border: 0px; position: absolute; top: 85%; left: 35%;}
+#personalmassager_btn { height: 200px; width: 330px; background: url('/art/png/massager.png'); border: 0px; position: absolute; top: 85%; left: 42%;}
+#coffeemachine_btn { height: 200px; width: 192px; background: url('/art/png/coffeepot.png'); border: 0px; position: absolute; top: 85%; left: 60%; }
+#fridge { height: 1000px !important; width: 591px !important; background: url('/art/png/fridge.png'); border: 0px !important; position: absolute; top: 32%; left: 69%; }
+
+#toaster {  }
+#roomba {  }
+#kittybrush {  }
+#personalmassager {  }
+#coffeemachine {  }

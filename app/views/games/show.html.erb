@@ -62,6 +62,7 @@
 	}
 	
 	function mainScreen() {
+		$("#start_screen").fadeOut();
 		fadeBtns();
 		$("#mainScreen").fadeIn();
 	}
@@ -138,8 +139,8 @@
 	function submitAnswer(answer, bot) {
 		var currentBot;
 		for (i=0;i<main_obj.scenarios.length;i++) {
-			if (bot == main_obj.scenarios[0].bot) {
-				currentBot = main_obj.scenarios[0];
+			if (bot == main_obj.scenarios[i].bot) {
+				currentBot = main_obj.scenarios[i];
 			}
 		}
 		
@@ -188,13 +189,16 @@
 </script>
 
 <div id="container">
-	<div id="loadBar">Loading this shit</div>
+	<div id="start_screen">   
+		<div id="loadBar">Loading this shit</div>
+		<div id="startBtn" onclick="mainScreen();" class="btn"></div>
+	</div>
 	<div id="answer"></div>
-	<div id="startBtn" onclick="mainScreen()" class="btn">Fuckin start this shit</div>
+	
 	
 	<div id="mainScreen" hidden>
 		<% @riddles["scenarios"].each_with_index do |scenario, index| %>
-			<div id="<%= scenario["bot"] %>_btn", class="bot" onclick="loadScreen('<%= scenario["bot"] %>')"><a href="#"><%= scenario["name"] %></a></div>
+			<div id="<%= scenario["bot"] %>_btn", class="bot" onclick="loadScreen('<%= scenario["bot"] %>')"><a href="#"></a></div>
 		<% end %>
 		<div id="fridge" onclick="fridgeScreen()"></div>
 	</div>
