@@ -31,7 +31,7 @@
 					"filename": "roombot.svg"
 				}
 			},
-			"answers": [ "garbage truck", "trash truck", "dumpster" ]
+			"answers": [ "garbage truck" ]
 		},
 		{
 			"bot": "toaster",
@@ -97,7 +97,7 @@
 					"filename": "catbrush.svg"
 				}
 			},
-			"answers": [ "comb", "chainsaw", "gear", "zipper", "saw", "fossil" ]
+			"answers": [ "comb" ]
 		},
 		{
 			"bot": "personalmassager",
@@ -130,7 +130,7 @@
 					"filename": "massager.svg"
 				}
 			},
-			"answers": [ "tongue", "lingua" ]
+			"answers": [ "tongue" ]
 		},
 		{
 			"bot": "coffeemachine",
@@ -163,7 +163,7 @@
 					"filename": "coffeepot.svg"
 				}
 			},
-			"answers": [ "doughnut", "donut", "tire", "innertube", "bagel" ]
+			"answers": [ "donut" ]
 		}
 	],
 	"screens": {
