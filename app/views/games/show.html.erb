@@ -79,6 +79,7 @@
 		fadeMain();
 		$('#'+name).fadeIn();
 		riddleBtn(name);
+		createjs.Sound.play(name + "_greeting");
 	}
 	function captureSound(callback) {
 		var recognition = new webkitSpeechRecognition();
