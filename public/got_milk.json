@@ -31,7 +31,7 @@
 					"filename": "roombot.svg"
 				}
 			},
-			"answers": [ "incorrectly" ] 
+			"answers": [ "garbage truck" ]
 		},
 		{
 			"bot": "toaster",
@@ -64,7 +64,7 @@
 					"filename": "toaster.svg"
 				}
 			},
-			"answers": [ "garbage truck" ] 
+			"answers": [ "incorrectly" ]
 		},
 		{
 			"bot": "catbrusher",
