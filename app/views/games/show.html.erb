@@ -1,2 +1,52 @@
-<h1>Game#show</h1>
-<p>Find me in app/views/game/show.html.erb</p>
+<%= link_to 'the sound', '/audio/robot_coffee_failure.mp3' %>
+<%= link_to 'the sound', '/got_milk.json' %>
+
+<script>
+	var main_obj = <%= raw @riddles.to_json %>;
+	
+	createjs.Sound.registerSounds(
+	[
+	<% @riddles["scenarios"].each do |scenario| %>
+		<% scenario["audio"].each do |audio| %>
+			<% unless audio[1]["filename"].blank? %>
+				{ id: "<%= audio[0].to_s %>", src: "<%= audio[1]["filename"].to_s %>" },
+			<% end %>
+		<% end %>
+	<% end %>
+	
+	]
+	,"/audio/");
+	
+	var queue = new createjs.LoadQueue();
+	createjs.Sound.alternateExtensions = ["mp3"];
+	queue.installPlugin(createjs.Sound);
+	queue.addEventListener("fileload", handleFileLoad);
+	queue.addEventListener("complete", handleComplete);
+	
+	
+	queue.loadManifest([
+		<% @riddles["scenarios"].each do |scenario| %>
+			<% scenario["audio"].each do |audio| %>
+				<% unless audio[1]["filename"].blank? %>
+					{ id: "<%= scenario["bot"].to_s + "_" + audio[0].to_s %>", src: "/audio/<%= audio[1]["filename"].to_s %>" },
+				<% end %>
+			<% end %>
+		<% end %>
+	]);
+	
+	function handleFileLoad(event) {
+		// A sound has been preloaded. This will fire TWICE
+		console.log("Preloaded:", event.id, event.src);
+	}
+	function handleComplete(event) {
+		// A sound has been preloaded. This will fire TWICE
+		console.log("Preloading Complete");
+	}
+	
+</script>
+
+<% @riddles["scenarios"].each do |scenario| %>
+	<% scenario["audio"].each do |audio| %>
+		<%= link_to audio[1]["filename"], '/audio/' + audio[1]["filename"] %>
+	<% end %>
+<% end %>

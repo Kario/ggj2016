@@ -1,5 +1,7 @@
 
 <script>
+var main_obj = <%= raw @riddles.to_json %>;
+
 function loadImage() {
   var preload = new createjs.LoadQueue();
   preload.addEventListener("fileload", handleFileComplete);
@@ -9,11 +11,14 @@ function loadImage() {
 function handleFileComplete(event) {
   document.body.appendChild(event.result);
 }
+
 </script>
 
 
 This is the riddles
 <%= @riddles %>
 
-
 <button onclick="loadMusic();" class="load-image">Load Music</button>
+
+
+<%= link_to 'the sound', 'sound/robot_coffee_failure.mp3' %>

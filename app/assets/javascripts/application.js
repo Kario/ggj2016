@@ -25,7 +25,7 @@ function init() {
 	}
 
 	//examples.showDistractor("content");
-	var assetsPath = "../_assets/audio/";
+	var assetsPath = "/audio/";
 	var sounds = [
 		{src: "Game-Break.ogg", id: 1},
 		{src: "Game-Spawn.ogg", id: 2},

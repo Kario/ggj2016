@@ -1,0 +1,203 @@
+{
+	"scenarios": [
+		{
+			"bot": "roomba",
+			"name": "Prim & Proper",
+			"audio": {
+				"failure": { 
+					"dropbox": "https://www.dropbox.com/s/ohc9aj1hrywpfp1/robot_roomba_failure.mp3?raw=1",
+					"filename": "robot_roomba_failure.mp3"
+				},
+				"greeting": {
+					"dropbox": "https://www.dropbox.com/s/e5eb4pzjkq9iyo3/robot_roomba_greeting.mp3?raw=1",
+					"filename": "robot_roomba_greeting.mp3"
+				},
+				"riddle": {
+					"dropbox": "https://www.dropbox.com/s/t83ft4lmvtflua9/robot_roomba_riddle.mp3?raw=1",
+					"filename": "robot_roomba_riddle.mp3"
+				},
+				"success": {
+					"dropbox": "https://www.dropbox.com/s/oaickrd8hb5na9v/robot_roomba_success.mp3?raw=1",
+					"filename": "robot_roomba_success.mp3"
+				},
+				"wrong": {
+					"dropbox": "https://www.dropbox.com/s/pse6irqy6xxlmz8/robot_roomba_wrong_try_again.mp3?raw=1",
+					"filename": "robot_roomba_wrong_try_again.mp3"
+				}
+			},
+			"art": {
+				"character": {
+					"dropbox": "https://www.dropbox.com/s/dhgvfnsaw6dp24n/roombot.svg?raw=1",
+					"filename": "roombot.svg"
+				}
+			},
+			"answers": [ "incorrectly" ] 
+		},
+		{
+			"bot": "toaster",
+			"name": "Gruff Pete",
+			"audio": {
+				"failure": {
+					"dropbox": "https://www.dropbox.com/s/1555q1e5kwwugyb/robot_toaster_fail.mp3?raw=1",
+					"filename": "robot_toaster_fail.mp3"
+				},
+				"greeting": {
+					"dropbox": "https://www.dropbox.com/s/27whzjdo4k0am8j/robot_toaster_greeting.mp3?raw=1",
+					"filename": "robot_toaster_greeting.mp3"
+				},
+				"riddle": {
+					"dropbox": "https://www.dropbox.com/s/l3uoq6b838wzeco/robot_toaster_riddle.mp3?raw=1",
+					"filename": "robot_toaster_riddle.mp3"
+				},
+				"success": {
+					"dropbox": "https://www.dropbox.com/s/augkik34g8j9qo2/robot_toaster_success.mp3?raw=1",
+					"filename": "robot_toaster_success.mp3"
+				},
+				"wrong": {
+					"dropbox": "https://www.dropbox.com/s/uslsys22ax5lfg7/robot_toaster_wrong_try_again.mp3?raw=1",
+					"filename": "robot_toaster_wrong_try_again.mp3"
+				}
+			},
+			"art": {
+				"character": {
+					"dropbox": "",
+					"filename": ""
+				}
+			},
+			"answers": [ "garbage truck" ] 
+		},
+		{
+			"bot": "catbrusher",
+			"name": "Cutesy",
+			"audio": {
+				"failure": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"greeting": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"riddle": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"success": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"wrong": {
+					"dropbox": "",
+					"filename": ""
+				}
+			},
+			"art": {
+				"character": {
+					"dropbox": "",
+					"filename": ""
+				}
+			},
+			"answers": [ "comb" ] 
+		},
+		{
+			"bot": "personalmassager",
+			"name": "",
+			"audio": {
+				"failure": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"greeting": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"riddle": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"success": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"wrong": {
+					"dropbox": "",
+					"filename": ""
+				}
+			},
+			"art": {
+				"character": {
+					"dropbox": "",
+					"filename": ""
+				}
+			},
+			"answers": [ "tongue" ] 
+		},
+		{
+			"bot": "coffeemachine",
+			"name": "",
+			"audio": {
+				"failure": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"greeting": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"riddle": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"success": {
+					"dropbox": "",
+					"filename": ""
+				},
+				"wrong": {
+					"dropbox": "",
+					"filename": ""
+				}
+			},
+			"art": {
+				"character": {
+					"dropbox": "",
+					"filename": ""
+				}
+			},
+			"answers": [ "doughnut" ] 
+		}
+	],
+	"screens": {
+		"title": {
+			"background": {
+				"dropbox": "",
+				"filename": ""
+			},
+			"instructions": [],
+			"intro": ""
+		},
+		"scenario": {
+			"background": {
+				"dropbox": "https://www.dropbox.com/s/uinchwz6tlxngkz/background.svg?raw=1",
+				"filename": "background.svg"
+			},
+			"speechbubbles": {
+				"kitty": {
+					"dropbox": "https://www.dropbox.com/s/au5c56owj393gan/speechbubble_kitty.svg?raw=1",
+					"filename": "speechbubble_kitty.svg"
+				},
+				"robots": {
+					"dropbox": "https://www.dropbox.com/s/bo7y19ytim0txcv/speechbubble_robots.svg?raw=1",
+					"filename": "speechbubble_robots.svg"
+				}
+			}
+		},
+		"exit": {
+			"background": {
+				"dropbox": "",
+				"filename": ""
+			}
+		}
+	},
+	"passwords": [
+	]
+}
