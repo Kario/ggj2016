@@ -145,19 +145,12 @@
 	
 </script>
 
-
-<% @riddles["scenarios"].each do |scenario| %>
-	<% scenario["audio"].each do |audio| %>
-		<%= link_to(audio[1]["filename"], "#", :onclick => 'createjs.Sound.play("' + scenario["bot"].to_s + "_" + audio[0].to_s + '")') %>
-	<% end %>
-<% end %>
-
 <div id="container">
 	<div id="loadBar">Loading this shit</div>
 	<div id="answer"></div>
 	<div id="startBtn" onclick="mainScreen()" class="btn">Fuckin start this shit</div>
 	
-	<div id="mainScreen">
+	<div id="mainScreen" hidden>
 		<% @riddles["scenarios"].each_with_index do |scenario, index| %>
 			<div id="<%= scenario["bot"] %>_btn", class="bot" onclick="loadScreen('<%= scenario["bot"] %>')"><a href="#"><%= scenario["name"] %></a></div>
 		<% end %>
