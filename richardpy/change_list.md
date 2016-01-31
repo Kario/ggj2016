@@ -32,5 +32,7 @@
 - Riddle chosen at random from list
 - Swap out a Riddle
 
-
+## Add Database
+- Port references from Json
+- Dropbox Import Method
 
