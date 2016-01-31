@@ -1,6 +1,14 @@
 <script>
 	var main_obj = <%= raw @riddles.to_json %>;
 	var riddleAnswer = "CHEESE";
+	var speechCapture = "";
+	var recognition = new webkitSpeechRecognition();
+	recognition.lang = "en-US";
+	recognition.onresult = function(event) { 
+		console.log(event);
+		console.log(event["results"][0][0]["transcript"]);
+		speechCapture = event["results"][0][0]["transcript"];
+	}
 	
 	createjs.Sound.registerSounds(
 	[
@@ -70,6 +78,9 @@
 		$('#'+name).fadeIn();
 		riddleBtn(name);
 	}
+	function captureSound() {
+		recognition.start();
+	}
 	
 </script>
 
@@ -86,7 +97,7 @@
 	
 	<div id="mainScreen">
 		<% @riddles["scenarios"].each_with_index do |scenario, index| %>
-			<div id="<%= scenario["bot"] %>_btn", class="bot" onclick="loadScreen("<%= scenario["bot"] %>")"><a href="#"><%= scenario["name"] %></a></div>
+			<div id="<%= scenario["bot"] %>_btn", class="bot" onclick="loadScreen('<%= scenario["bot"] %>')"><a href="#"><%= scenario["name"] %></a></div>
 		<% end %>
 		<div id="fridge"></div>
 	</div>
@@ -101,6 +112,12 @@
 			<h1><%= scenario["name"] %></h1>
 			<div class="riddle_btn btn">
 				<%= link_to("Ask the Riddle!", "#", :onclick => 'createjs.Sound.play("' + scenario["bot"].to_s + '_riddle")') %>
+			</div>
+			<div class="riddle_btn btn">
+				<%= link_to("Answer", "#", :onclick => 'captureSound()') %>
+			</div>
+			<div class="riddle_btn btn">
+				<%= link_to("Submit", "#", :onclick => 'createjs.Sound.play("' + scenario["bot"].to_s + '_riddle")') %>
 			</div>
 		</div>
 	<% end %>
