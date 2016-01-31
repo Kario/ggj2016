@@ -60,7 +60,7 @@
 			},
 			"art": {
 				"character": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/b2z52s9jp6dhx0y/toaster.svg?raw=1",
 					"filename": "toaster.svg"
 				}
 			},
@@ -71,29 +71,29 @@
 			"name": "Cutesy",
 			"audio": {
 				"failure": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/ubskpydtun0u450/robot_kittybrush_failure.mp3?raw=1",
 					"filename": "robot_kittybrush_failure.mp3"
 				},
 				"greeting": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/szuvfh0om0uhu5l/robot_kittybrush_greeting.mp3?raw=1",
 					"filename": "robot_kittybrush_greeting.mp3"
 				},
 				"riddle": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/1iq5yj98wpvsrde/robot_kittybrush_riddle.mp3?raw=1",
 					"filename": "robot_kittybrush_riddle.mp3"
 				},
 				"success": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/63lf6eftr15lcha/robot_kittybrush_success.mp3?raw=1",
 					"filename": "robot_kittybrush_success.mp3"
 				},
 				"wrong": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/xrswrgn0kfq2vag/robot_kittybrush_wrong_try_again.mp3?raw=1",
 					"filename": "robot_kittybrush_wrong_try_again.mp3"
 				}
 			},
 			"art": {
 				"character": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/p3d9lzxq68yur31/catbrush.svg?raw=1",
 					"filename": "catbrush.svg"
 				}
 			},
@@ -104,29 +104,29 @@
 			"name": "Miki-chan",
 			"audio": {
 				"failure": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/v3oaan6evjno58z/robot_massager_failure.mp3?raw=1",
 					"filename": "robot_massager_failure.mp3"
 				},
 				"greeting": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/x48a80ib7m1yxsk/robot_massager_greeting.mp3?raw=1",
 					"filename": "robot_massager_greeting.mp3"
 				},
 				"riddle": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/1ub9pi0fyifg5jm/robot_massager_riddle.mp3?raw=1",
 					"filename": "robot_massager_riddle.mp3"
 				},
 				"success": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/rf7duxalb6bafvv/robot_massager_success.mp3?raw=1",
 					"filename": "robot_massager_success.mp3"
 				},
 				"wrong": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/qqa86ts1wqiidqe/robot_massager_wrong_try_again.mp3?raw=1",
 					"filename": "robot_massager_wrong_try_again.mp3"
 				}
 			},
 			"art": {
 				"character": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/l32j7dehzz2bdv0/massager.svg?raw=1",
 					"filename": "massager.svg"
 				}
 			},
@@ -137,33 +137,33 @@
 			"name": "Zzack!",
 			"audio": {
 				"failure": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/1sqbkz8x57o197w/robot_coffee_failure.mp3?raw=1",
 					"filename": "robot_coffee_failure.mp3"
 				},
 				"greeting": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/ra6ra34u20x1bo1/robot_coffee_greeting.mp3?raw=1",
 					"filename": "robot_coffee_greeting.mp3"
 				},
 				"riddle": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/pn1ey1i5ss4cqjf/robot_coffee_riddle.mp3?raw=1",
 					"filename": "robot_coffee_riddle.mp3"
 				},
 				"success": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/biw9pzroivmtd29/robot_coffee_success.mp3?raw=1",
 					"filename": "robot_coffee_success.mp3"
 				},
 				"wrong": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/9ju9dn4d4v69jf6/robot_coffee_wrong_try_again.mp3?raw=1",
 					"filename": "robot_coffee_wrong_try_again.mp3"
 				}
 			},
 			"art": {
 				"character": {
-					"dropbox": "",
+					"dropbox": "https://www.dropbox.com/s/qdofvjo6mwwpckz/coffeepot.svg?raw=1",
 					"filename": "coffeepot.svg"
 				}
 			},
-			"answers": [ "doughnut", "donut", "tire", "innertube", "bagel" ]
+			"answers": [ "doughnut", "donut", "tire", "innertube", "bagel", "inner tube" ]
 		}
 	],
 	"screens": {
@@ -191,8 +191,12 @@
 				}
 			},
 			"fridge": {
-				"dropbox": "",
-				"filename": "fridge.svg"
+				"art": {
+					"dropbox": "https://www.dropbox.com/s/qnqf9qrkm0waxm7/fridge.svg?raw=1",
+					"filename": "fridge.svg"
+				},
+				"audio": {
+				}
 			}
 		},
 		"exit": {
