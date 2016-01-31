@@ -47,6 +47,14 @@
 		
 	}
 	
+	function fadeBtns() {
+		$(".btn").fadeOut();
+	}	
+	
+	function mainScreen() {
+		fadeBtns();
+	}
+	
 </script>
 
 
@@ -58,5 +66,5 @@
 
 <div id="container">
 	<div id="loadBar">Loading this shit</div>
-	<div id="startBtn">Fuckin start this shit</div>
+	<div id="startBtn" onclick="mainScreen()" class="btn">Fuckin start this shit</div>
 </div>
