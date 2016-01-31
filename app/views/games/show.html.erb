@@ -2,13 +2,8 @@
 	var main_obj = <%= raw @riddles.to_json %>;
 	var riddleAnswer = "CHEESE";
 	var speechCapture = "";
-	var recognition = new webkitSpeechRecognition();
-	recognition.lang = "en-US";
-	recognition.onresult = function(event) { 
-		console.log(event);
-		console.log(event["results"][0][0]["transcript"]);
-		speechCapture = event["results"][0][0]["transcript"];
-	}
+	var attempts = 0;
+	var correctAnswers = 0;
 	
 	createjs.Sound.registerSounds(
 	[
@@ -78,8 +73,74 @@
 		$('#'+name).fadeIn();
 		riddleBtn(name);
 	}
-	function captureSound() {
+	function captureSound(callback) {
+		var recognition = new webkitSpeechRecognition();
+		recognition.lang = "en-US";
+		recognition.onend = function (e) {
+			if (callback) {
+				callback('no results');
+			}
+		};
+		recognition.onresult = function (e) {
+            // cancel onend handler
+            recognition.onend = null;
+			
+			console.log(e);
+			console.log(e["results"][0][0]["transcript"]);
+			$('#answer').text('Your Answer: ' + e["results"][0][0]["transcript"]);
+			speechCapture = e["results"][0][0]["transcript"];
+			
+            if (callback) {
+                callback(null, {
+                    transcript: e.results[0][0].transcript,
+                    confidence: e.results[0][0].confidence
+                });
+            }
+        }
+	
 		recognition.start();
+		
+	}
+	
+	function captureSpeech() {
+		captureSound('test', myCallBack);
+		console.log('what?');
+		alert('timing test');
+	}
+	
+	function clearAnswer() {
+		$('#answer').text('');
+	}
+	
+	function submitAnswer(answer, bot) {
+		var currentBot;
+		for (i=0;i<main_obj.scenarios.length;i++) {
+			if (bot == main_obj.scenarios[0].bot) {
+				currentBot = main_obj.scenarios[0];
+			}
+		}
+		
+		console.log(currentBot);
+		if (answer == speechCapture) {
+			createjs.Sound.play(currentBot["bot"] + "_success");
+			correctAnswers++;
+			$('#'+bot).fadeOut();
+			$('#'+bot+'_btn').css({ 'pointer-events': 'none' });
+			mainScreen();
+			clearAnswer()
+			attempts = 0;
+		} else if ( attempts < 3 ) {
+			createjs.Sound.play(currentBot["bot"] + "_wrong");
+			attempts++;
+			console.log(attempts);
+		} else {
+			createjs.Sound.play(currentBot["bot"] + "_failure")
+			$('#'+bot).fadeOut();
+			$('#'+bot+'_btn').css({ 'pointer-events': 'none' });
+			mainScreen();
+			attempts = 0;
+			clearAnswer()
+		}
 	}
 	
 </script>
@@ -93,6 +154,7 @@
 
 <div id="container">
 	<div id="loadBar">Loading this shit</div>
+	<div id="answer"></div>
 	<div id="startBtn" onclick="mainScreen()" class="btn">Fuckin start this shit</div>
 	
 	<div id="mainScreen">
@@ -117,7 +179,7 @@
 				<%= link_to("Answer", "#", :onclick => 'captureSound()') %>
 			</div>
 			<div class="riddle_btn btn">
-				<%= link_to("Submit", "#", :onclick => 'createjs.Sound.play("' + scenario["bot"].to_s + '_riddle")') %>
+				<%= link_to("Submit", "#", :onclick => "submitAnswer('" + scenario["answers"][0].to_s + "', '" + scenario["bot"] + "' )") %>
 			</div>
 		</div>
 	<% end %>
