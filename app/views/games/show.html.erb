@@ -1,5 +1,6 @@
 <script>
 	var main_obj = <%= raw @riddles.to_json %>;
+	var riddleAnswer = "CHEESE";
 	
 	createjs.Sound.registerSounds(
 	[
@@ -49,11 +50,25 @@
 	
 	function fadeBtns() {
 		$(".btn").fadeOut();
-	}	
+	}
+	
+	function fadeMain() {
+		$("#mainScreen").fadeOut();
+	}
 	
 	function mainScreen() {
 		fadeBtns();
 		$("#mainScreen").fadeIn();
+	}
+	
+	function riddleBtn(parent) {
+		$('#'+parent).children('.btn').fadeIn()
+	}
+	
+	function loadScreen(name) {
+		fadeMain();
+		$('#'+name).fadeIn();
+		riddleBtn(name);
 	}
 	
 </script>
@@ -71,7 +86,7 @@
 	
 	<div id="mainScreen">
 		<% @riddles["scenarios"].each_with_index do |scenario, index| %>
-			<div id="bot<%= index+1 %>", class="bot"><%= scenario["bot"] %></div>
+			<div id="<%= scenario["bot"] %>_btn", class="bot" onclick="loadScreen("<%= scenario["bot"] %>")"><a href="#"><%= scenario["name"] %></a></div>
 		<% end %>
 		<div id="fridge"></div>
 	</div>
@@ -79,6 +94,18 @@
 	<div id="fridgeScreen">
 	
 	</div>	
+	
+	<!-- Riddle screens -->
+	<% @riddles["scenarios"].each_with_index do |scenario, index| %>
+		<div class="riddle_screen" id="<%= scenario["bot"] %>" hidden>
+			<h1><%= scenario["name"] %></h1>
+			<div class="riddle_btn btn">
+				<%= link_to("Ask the Riddle!", "#", :onclick => 'createjs.Sound.play("' + scenario["bot"].to_s + '_riddle")') %>
+			</div>
+		</div>
+	<% end %>
+	
+	
 	
 	
 </div>
