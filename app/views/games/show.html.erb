@@ -1,6 +1,3 @@
-<%= link_to 'the sound', '/audio/robot_coffee_failure.mp3' %>
-<%= link_to 'the sound', '/got_milk.json' %>
-
 <script>
 	var main_obj = <%= raw @riddles.to_json %>;
 	
@@ -41,12 +38,25 @@
 	function handleComplete(event) {
 		// A sound has been preloaded. This will fire TWICE
 		console.log("Preloading Complete");
+		enableStart();
+	}
+	
+	function enableStart() {
+		$("#startBtn").fadeIn();
+		$("#loadBar").fadeOut();
+		
 	}
 	
 </script>
 
+
 <% @riddles["scenarios"].each do |scenario| %>
 	<% scenario["audio"].each do |audio| %>
-		<%= link_to audio[1]["filename"], '/audio/' + audio[1]["filename"] %>
+		<%= link_to(audio[1]["filename"], "#", :onclick => 'createjs.Sound.play("' + scenario["bot"].to_s + "_" + audio[0].to_s + '")') %>
 	<% end %>
 <% end %>
+
+<div id="container">
+	<div id="loadBar">Loading this shit</div>
+	<div id="startBtn">Fuckin start this shit</div>
+</div>
