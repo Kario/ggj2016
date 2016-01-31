@@ -1,9 +1,11 @@
 <script>
 	var main_obj = <%= raw @riddles.to_json %>;
-	var riddleAnswer = "CHEESE";
+	var riddleAnswer = "JUMBO";
+	var hiddenAnswer = "_____";
 	var speechCapture = "";
 	var attempts = 0;
 	var correctAnswers = 0;
+	var arr = [1,2,3,4,5];
 	
 	createjs.Sound.registerSounds(
 	[
@@ -102,6 +104,10 @@
 		
 	}
 	
+	function hangMan() {
+		$('#fridgeHint').text();
+	}
+	
 	function captureSpeech() {
 		captureSound('test', myCallBack);
 		console.log('what?');
@@ -114,6 +120,19 @@
 	function fridgeScreen() {
 		fadeMain();
 		$('#fridgeScreen').fadeIn();
+		arr.sort(function () {
+			return Math.random() - 0.5;
+		});
+		
+		str = hiddenAnswer.split('');
+
+		for (i=0;i<correctAnswers;i++) {
+			str[arr[i]] = riddleAnswer[arr[i]];
+		}
+		
+		hiddenAnswer = str.join('');
+		$('#fridgeHint').text(hiddenAnswer);
+		
 	}
 	
 	function submitAnswer(answer, bot) {
@@ -147,6 +166,25 @@
 		}
 	}
 	
+	function fridgeAnswer() {
+		var msgText;
+		var endPic;
+		if (speechCapture.toLowerCase() == riddleAnswer.toLowerCase()) {
+			msgText = "You win!";
+			endPic = "";
+		} else {
+			msgText = "You lose!";
+			endPic = "";
+		}
+		
+		clearAnswer();
+		$('#message').text(msgText);
+		$('#endPic').html('<img src="' + endPic + '">');
+		$('#fridgeScreen').fadeOut();
+		$('#endScreen').fadeIn();
+		
+	}
+	
 </script>
 
 <div id="container">
@@ -167,14 +205,14 @@
 			<%= link_to("Answer", "#", :onclick => 'captureSound()') %>
 		</div>
 		<div id="fridgeSubmit">
-			<%= link_to("Submit", "#", :onclick => '') %>
+			<%= link_to("Submit", "#", :onclick => 'fridgeAnswer()') %>
 		</div>
 	</div>	
 	
 	<div id="endScreen" hidden>
 		<div id="message"></div>
 		<div id="endPic"></div>
-		<div id="resetBtn" class="btn"></div>
+		<div id="resetBtn" class="btn">Reset</div>
 	</div>
 	
 	<!-- Riddle screens -->
