@@ -111,6 +111,10 @@
 	function clearAnswer() {
 		$('#answer').text('');
 	}
+	function fridgeScreen() {
+		fadeMain();
+		$('#fridgeScreen').fadeIn();
+	}
 	
 	function submitAnswer(answer, bot) {
 		var currentBot;
@@ -154,12 +158,24 @@
 		<% @riddles["scenarios"].each_with_index do |scenario, index| %>
 			<div id="<%= scenario["bot"] %>_btn", class="bot" onclick="loadScreen('<%= scenario["bot"] %>')"><a href="#"><%= scenario["name"] %></a></div>
 		<% end %>
-		<div id="fridge"></div>
+		<div id="fridge" onclick="fridgeScreen()"></div>
 	</div>
 	
-	<div id="fridgeScreen">
-	
+	<div id="fridgeScreen" hidden>
+		<div id="fridgeHint"></div>
+		<div id="fridgeAnswer">
+			<%= link_to("Answer", "#", :onclick => 'captureSound()') %>
+		</div>
+		<div id="fridgeSubmit">
+			<%= link_to("Submit", "#", :onclick => '') %>
+		</div>
 	</div>	
+	
+	<div id="endScreen" hidden>
+		<div id="message"></div>
+		<div id="endPic"></div>
+		<div id="resetBtn" class="btn"></div>
+	</div>
 	
 	<!-- Riddle screens -->
 	<% @riddles["scenarios"].each_with_index do |scenario, index| %>
