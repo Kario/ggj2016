@@ -169,8 +169,8 @@
 	"screens": {
 		"title": {
 			"background": {
-				"dropbox": "",
-				"filename": ""
+				"dropbox": "https://www.dropbox.com/s/n3qxfvzeeoc846u/background_titlepage.svg?raw=1",
+				"filename": "background_titlepage.svg"
 			},
 			"instructions": [],
 			"intro": ""
