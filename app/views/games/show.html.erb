@@ -53,6 +53,7 @@
 	
 	function mainScreen() {
 		fadeBtns();
+		$("#mainScreen").fadeIn();
 	}
 	
 </script>
@@ -67,4 +68,19 @@
 <div id="container">
 	<div id="loadBar">Loading this shit</div>
 	<div id="startBtn" onclick="mainScreen()" class="btn">Fuckin start this shit</div>
+	
+	<div id="mainScreen">
+		<% @riddles["scenarios"].each_with_index do |scenario, index| %>
+			<div id="bot<%= index+1 %>", class="bot"><%= scenario["bot"] %></div>
+		<% end %>
+		<div id="fridge"></div>
+	</div>
+	
+	<div id="fridgeScreen">
+	
+	</div>	
+	
+	
 </div>
+
+
