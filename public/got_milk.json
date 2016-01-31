@@ -31,7 +31,7 @@
 					"filename": "roombot.svg"
 				}
 			},
-			"answers": [ "garbage truck" ]
+			"answers": [ "garbage truck", "trash truck", "dumpster" ]
 		},
 		{
 			"bot": "toaster",
@@ -67,103 +67,103 @@
 			"answers": [ "incorrectly" ]
 		},
 		{
-			"bot": "catbrusher",
+			"bot": "kittybrush",
 			"name": "Cutesy",
 			"audio": {
 				"failure": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_kittybrush_failure.mp3"
 				},
 				"greeting": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_kittybrush_greeting.mp3"
 				},
 				"riddle": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_kittybrush_riddle.mp3"
 				},
 				"success": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_kittybrush_success.mp3"
 				},
 				"wrong": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_kittybrush_wrong_try_again.mp3"
 				}
 			},
 			"art": {
 				"character": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "catbrush.svg"
 				}
 			},
-			"answers": [ "comb" ] 
+			"answers": [ "comb", "chainsaw", "gear", "zipper", "saw", "fossil" ]
 		},
 		{
 			"bot": "personalmassager",
-			"name": "",
+			"name": "Miki-chan",
 			"audio": {
 				"failure": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_massager_failure.mp3"
 				},
 				"greeting": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_massager_greeting.mp3"
 				},
 				"riddle": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_massager_riddle.mp3"
 				},
 				"success": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_massager_success.mp3"
 				},
 				"wrong": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_massager_wrong_try_again.mp3"
 				}
 			},
 			"art": {
 				"character": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "massager.svg"
 				}
 			},
-			"answers": [ "tongue" ] 
+			"answers": [ "tongue", "lingua" ]
 		},
 		{
 			"bot": "coffeemachine",
-			"name": "",
+			"name": "Zzack!",
 			"audio": {
 				"failure": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_coffee_failure.mp3"
 				},
 				"greeting": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_coffee_greeting.mp3"
 				},
 				"riddle": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_coffee_riddle.mp3"
 				},
 				"success": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_coffee_success.mp3"
 				},
 				"wrong": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "robot_coffee_wrong_try_again.mp3"
 				}
 			},
 			"art": {
 				"character": {
 					"dropbox": "",
-					"filename": ""
+					"filename": "coffeepot.svg"
 				}
 			},
-			"answers": [ "doughnut" ] 
+			"answers": [ "doughnut", "donut", "tire", "innertube", "bagel" ]
 		}
 	],
 	"screens": {
@@ -189,6 +189,10 @@
 					"dropbox": "https://www.dropbox.com/s/bo7y19ytim0txcv/speechbubble_robots.svg?raw=1",
 					"filename": "speechbubble_robots.svg"
 				}
+			},
+			"fridge": {
+				"dropbox": "",
+				"filename": "fridge.svg"
 			}
 		},
 		"exit": {
@@ -199,5 +203,15 @@
 		}
 	},
 	"passwords": [
+		"jazzy",
+		"pizza",
+		"jumpy",
+		"quack",
+		"juicy",
+		"taste",
+		"toast",
+		"solar",
+		"robot",
+		"droid"
 	]
 }
