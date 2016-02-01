@@ -49,8 +49,11 @@
 	
 	function enableStart() {
 		$("#startBtn").fadeIn();
+		createjs.Sound.play("kitty_milk_ditty");
 		$("#loadBar").fadeOut();
-		
+		arr.sort(function () {
+                        return Math.random() - 0.5;
+                });
 	}
 	
 	function fadeBtns() {
@@ -62,7 +65,9 @@
 	}
 	
 	function mainScreen() {
+		$("#start_screen").fadeOut();
 		fadeBtns();
+		$('#visible_letters').text(getHiddenAnswer());
 		$("#mainScreen").fadeIn();
 	}
 	
@@ -74,6 +79,7 @@
 		fadeMain();
 		$('#'+name).fadeIn();
 		riddleBtn(name);
+		createjs.Sound.play(name + "_greeting");
 	}
 	function captureSound(callback) {
 		var recognition = new webkitSpeechRecognition();
@@ -103,6 +109,13 @@
 		recognition.start();
 		
 	}
+
+	function goBack(botname) {
+		$('#'+botname).fadeOut();
+                        mainScreen();
+                        attempts = 0;
+                        clearAnswer()	
+	}
 	
 	function hangMan() {
 		$('#fridgeHint').text();
@@ -120,9 +133,6 @@
 	function fridgeScreen() {
 		fadeMain();
 		$('#fridgeScreen').fadeIn();
-		arr.sort(function () {
-			return Math.random() - 0.5;
-		});
 		
 		str = hiddenAnswer.split('');
 
@@ -130,16 +140,24 @@
 			str[arr[i]] = riddleAnswer[arr[i]];
 		}
 		
-		hiddenAnswer = str.join('');
+		hiddenAnswer = getHiddenAnswer();
 		$('#fridgeHint').text(hiddenAnswer);
 		
 	}
-	
+	function getHiddenAnswer() {
+		str = hiddenAnswer.split('');
+
+                for (i=0;i<correctAnswers;i++) {
+                        str[arr[i]] = riddleAnswer[arr[i]];
+                }
+                
+                return str.join('');
+}
 	function submitAnswer(answer, bot) {
 		var currentBot;
 		for (i=0;i<main_obj.scenarios.length;i++) {
-			if (bot == main_obj.scenarios[0].bot) {
-				currentBot = main_obj.scenarios[0];
+			if (bot == main_obj.scenarios[i].bot) {
+				currentBot = main_obj.scenarios[i];
 			}
 		}
 		
@@ -171,42 +189,53 @@
 		var endPic;
 		if (speechCapture.toLowerCase() == riddleAnswer.toLowerCase()) {
 			msgText = "You win!";
-			endPic = "";
+			endPic = "/art/png/victorypage.png";
+			fadeMain();
 		} else {
 			msgText = "You lose!";
-			endPic = "";
+			endPic = "/art/png/losepage.png";
 		}
 		
 		clearAnswer();
 		$('#message').text(msgText);
 		$('#endPic').html('<img src="' + endPic + '">');
 		$('#fridgeScreen').fadeOut();
+		
 		$('#endScreen').fadeIn();
 		
 	}
 	
 </script>
 
+<audio controls autoplay hidden>
+  <source src="/audio/kitty_milk_ditty.mp3" type="audio/mpeg">
+</audio>
+
 <div id="container">
-	<div id="loadBar">Loading this shit</div>
+	<div id="start_screen">   
+		<div id="loadBar">Loading this shit</div>
+		<div id="startBtn" onclick="mainScreen();" class="btn"></div>
+	</div>
 	<div id="answer"></div>
-	<div id="startBtn" onclick="mainScreen()" class="btn">Fuckin start this shit</div>
+	
 	
 	<div id="mainScreen" hidden>
+		<div id="visible_letters"></div>
 		<% @riddles["scenarios"].each_with_index do |scenario, index| %>
-			<div id="<%= scenario["bot"] %>_btn", class="bot" onclick="loadScreen('<%= scenario["bot"] %>')"><a href="#"><%= scenario["name"] %></a></div>
+			<div id="<%= scenario["bot"] %>_btn", class="bot" onclick="loadScreen('<%= scenario["bot"] %>')"><a href="#"></a></div>
 		<% end %>
 		<div id="fridge" onclick="fridgeScreen()"></div>
 	</div>
 	
 	<div id="fridgeScreen" hidden>
 		<div id="fridgeHint"></div>
-		<div id="fridgeAnswer">
-			<%= link_to("Answer", "#", :onclick => 'captureSound()') %>
+		<div id="fridgeAnswer" onclick="captureSound();">
+			Answer
 		</div>
-		<div id="fridgeSubmit">
-			<%= link_to("Submit", "#", :onclick => 'fridgeAnswer()') %>
+		<div id="fridgeSubmit" onclick="fridgeAnswer();">
+			Submit
 		</div>
+		<div id="fridge_prop"></div>
 	</div>	
 	
 	<div id="endScreen" hidden>
@@ -228,6 +257,8 @@
 			<div class="riddle_btn btn">
 				<%= link_to("Submit", "#", :onclick => "submitAnswer('" + scenario["answers"][0].to_s + "', '" + scenario["bot"] + "' )") %>
 			</div>
+			<div id="<%= scenario["bot"].to_s %>_prop"></div>
+			<div class="go_back btn" onclick="goBack('<%= scenario["bot"].to_s %>')">Go Back</div>
 		</div>
 	<% end %>
 	
