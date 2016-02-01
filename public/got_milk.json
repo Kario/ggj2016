@@ -163,11 +163,7 @@
 					"filename": "coffeepot.svg"
 				}
 			},
-<<<<<<< HEAD
-			"answers": [ "doughnut", "donut", "tire", "innertube", "bagel", "inner tube" ]
-=======
 			"answers": [ "donut" ]
->>>>>>> upstream/master
 		}
 	],
 	"screens": {
