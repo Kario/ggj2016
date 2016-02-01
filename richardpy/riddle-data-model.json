@@ -1,0 +1,28 @@
+{
+  "riddleID": "",
+  "characterID": "",
+  "difficulty": 0,
+  "messages": {
+    "greeting": {
+      "audio": "",
+      "text": ""
+    },
+    "riddle": {
+      "audio": "",
+      "text": ""
+    },
+    "hint": {
+      "audio": "",
+      "text": ""
+    },
+    "wrong": {
+      "audio": "",
+      "text": ""
+    },
+    "failure": {
+      "audio": "",
+      "text": ""
+    }
+  },
+  "answers": [ ]
+}

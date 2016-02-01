@@ -1,0 +1,64 @@
+{
+  "screens": {
+    "title": {
+      "background": "https://www.dropbox.com/s/n3qxfvzeeoc846u/background_titlepage.svg?raw=1",
+      "track": "",
+      "instructions": [],
+      "intro": "",
+      "buttons": {
+        "start": ""
+      }
+    },
+    "navigation": {
+      "background": "",
+      "track": "",
+      "text": "",
+      "buttons": {
+
+      }
+    },
+    "riddle": {
+      "background": "https://www.dropbox.com/s/uinchwz6tlxngkz/background.svg?raw=1",
+      "speechbubbles": {
+        "kitty": "https://www.dropbox.com/s/au5c56owj393gan/speechbubble_kitty.svg?raw=1",
+        "robots": "https://www.dropbox.com/s/bo7y19ytim0txcv/speechbubble_robots.svg?raw=1"
+      },
+      "fridge": {
+        "art": "https://www.dropbox.com/s/qnqf9qrkm0waxm7/fridge.svg?raw=1",
+        "audio": {
+          "initialGreeting": "",
+          "returnGreeting": "",
+          "wrong": ""
+        }
+      },
+      "buttons": {
+
+      }
+    },
+    "win": {
+      "background": "",
+      "text": "",
+      "audio": "",
+      "track": ""
+    },
+    "lose": {
+      "background": "",
+      "text": "",
+      "audio": "",
+      "track": ""
+    }
+  },
+  "passwords": [
+    "jazzy",
+    "pizza",
+    "jumpy",
+    "quack",
+    "juicy",
+    "taste",
+    "toast",
+    "solar",
+    "robot",
+    "droid",
+    "jumbo"
+  ]
+}
